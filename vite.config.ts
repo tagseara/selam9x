@@ -8,14 +8,10 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   vite: {
-    base: "/selam9x/", 
+    // Setting this back to "/" allows Cloudflare to map paths relative to its root domain safely
+    base: "/", 
   },
   tanstackStart: {
-    server: { 
-      entry: "server",
-      // FORCED FIX: Overrides Lovable's default Cloudflare server target 
-      // and instructs Nitro to generate purely static files
-      preset: "static" 
-    },
+    server: { entry: "server" },
   },
 });
