@@ -1,0 +1,2 @@
+- [Portfolio Turkish font fix](turkish-font.md) — Turkish mode uses `data-lang="tr"` + `'Plus Jakarta Sans'` first to fix ğ/ş/ı/İ/ç/ö/ü rendering; Thmanyah lacks full Latin Extended.
+- [Aurora background](aurora-bg.md) — 5 fixed-position radial orbs with `mix-blend-mode: screen` + slow CSS keyframe drift; grid overlay uses mask-image to fade edges.
