@@ -85,6 +85,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Parasayte — Creative Engineer" },
       { name: "twitter:description", content: "Personal portfolio of Parasayte, a Creative Engineer." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f770b72b-dc0c-4c9e-920a-9320ff2552e9/id-preview-b7bd1ba7--1e8732c8-001e-4a26-bb3f-3fc456ee61f2.lovable.app-1781032042989.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f770b72b-dc0c-4c9e-920a-9320ff2552e9/id-preview-b7bd1ba7--1e8732c8-001e-4a26-bb3f-3fc456ee61f2.lovable.app-1781032042989.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
