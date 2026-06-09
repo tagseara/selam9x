@@ -8,7 +8,8 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   vite: {
-    base: process.env.GITHUB_PAGES === "true" ? "/selam9x/" : "/",
+    // This explicitly hardcodes your GitHub repository path so routing matches perfectly
+    base: "/selam9x/", 
   },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
