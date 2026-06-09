@@ -9,7 +9,12 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 export default defineConfig({
   vite: {
     // Setting this back to "/" allows Cloudflare to map paths relative to its root domain safely
-    base: "/", 
+    base: "/",
+    server: {
+      host: "0.0.0.0",
+      port: 5000,
+      allowedHosts: true,
+    },
   },
   tanstackStart: {
     server: { entry: "server" },
