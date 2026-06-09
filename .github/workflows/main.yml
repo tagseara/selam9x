@@ -2,7 +2,10 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: 'main' # change to 'master' if your main branch is called master
+    branches: 'main'
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 permissions:
   contents: read
@@ -32,12 +35,13 @@ jobs:
         run: bun install
 
       - name: Build project
-        run: bun run build # change this if your build command is different
+        run: bun run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # change to './build' or '.' depending on your output folder
+          # FIXED: TanStack Start + Nitro outputs static files into this exact directory
+          path: './.output/public'
 
       - name: Deploy to GitHub Pages
         id: deployment
