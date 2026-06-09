@@ -40,8 +40,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Now that preset is "static", this directory will be perfectly created
-          path: './.output/public'
+          # CORRECTED: Standard Lovable apps compile directly into this directory
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
