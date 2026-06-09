@@ -40,6 +40,6 @@ externalPort = 3001
 
 [deployment]
 deploymentTarget = "autoscale"
-build = ["bun", "run", "build"]
+build = ["bash", "-c", "bun install && bun run build"]
 publicDir = "dist/client"
 run = ["bun", "run", "serve.mjs"]

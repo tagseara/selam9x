@@ -276,6 +276,42 @@ function AuroraBackground() {
 }
 
 /* ================================================================== */
+/* CURSOR SPOTLIGHT                                                      */
+/* ================================================================== */
+function CursorSpotlight() {
+  const ref = useRef<HTMLDivElement>(null);
+  const pos = useRef({ x: -999, y: -999 });
+  const curr = useRef({ x: -999, y: -999 });
+  const raf = useRef<number>(0);
+
+  useEffect(() => {
+    const onMove = (e: MouseEvent) => {
+      pos.current = { x: e.clientX, y: e.clientY };
+    };
+    window.addEventListener("mousemove", onMove, { passive: true });
+
+    const tick = () => {
+      const dx = pos.current.x - curr.current.x;
+      const dy = pos.current.y - curr.current.y;
+      curr.current.x += dx * 0.06;
+      curr.current.y += dy * 0.06;
+      if (ref.current) {
+        ref.current.style.transform = `translate(${curr.current.x - 350}px, ${curr.current.y - 350}px)`;
+      }
+      raf.current = requestAnimationFrame(tick);
+    };
+    raf.current = requestAnimationFrame(tick);
+
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      cancelAnimationFrame(raf.current);
+    };
+  }, []);
+
+  return <div ref={ref} className="cursor-spotlight" aria-hidden="true" />;
+}
+
+/* ================================================================== */
 function Index() {
   const [lang, setLang] = useState<Lang>("en");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -287,6 +323,7 @@ function Index() {
     <div className="brutal-root" dir={dir} data-lang={lang}>
       <style>{CSS}</style>
       <AuroraBackground />
+      <CursorSpotlight />
 
       {/* HEADER */}
       <header className="brutal-header">
@@ -793,6 +830,26 @@ const CSS = `
   33%     { transform: translate(120px, 60px) scale(1.3); opacity: 0.6; }
   66%     { transform: translate(-80px, -100px) scale(0.75); opacity: 0.3; }
 }
+
+/* ====== CURSOR SPOTLIGHT ====== */
+.cursor-spotlight {
+  position: fixed;
+  top: 0; left: 0;
+  width: 700px; height: 700px;
+  pointer-events: none;
+  z-index: 1;
+  will-change: transform;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(163,116,255,0.07) 0%,
+    rgba(62,255,139,0.04) 30%,
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+  filter: blur(2px);
+}
+@media (hover: none) { .cursor-spotlight { display: none; } }
 
 .brutal-root {
   background: var(--bg);
