@@ -40,8 +40,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # FORCED FALLBACK: Lovable's standard static export path
-          path: './dist'
+          # Now that preset is "static", this directory will be perfectly created
+          path: './.output/public'
 
       - name: Deploy to GitHub Pages
         id: deployment
