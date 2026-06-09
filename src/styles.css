@@ -7,37 +7,42 @@
 /* Thmanyah Font Face Definitions */
 @font-face {
   font-family: 'Thmanyah Sans';
-  src: url('/Thmanyah-Font-Family/thmanyah typeface/thmanyahsans/ThmanyahSans-Regular.ttf') format('truetype');
+  src: url('/Thmanyah-Font-Family/thmanyah%20typeface/thmanyahsans/woff2/thmanyahsans-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Thmanyah Sans';
-  src: url('/Thmanyah-Font-Family/thmanyah typeface/thmanyahsans/ThmanyahSans-SemiBold.ttf') format('truetype');
+  src: url('/Thmanyah-Font-Family/thmanyah%20typeface/thmanyahsans/woff2/thmanyahsans-Medium.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Thmanyah Sans';
-  src: url('/Thmanyah-Font-Family/thmanyah typeface/thmanyahsans/ThmanyahSans-Bold.ttf') format('truetype');
+  src: url('/Thmanyah-Font-Family/thmanyah%20typeface/thmanyahsans/woff2/thmanyahsans-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Thmanyah Serif Display';
-  src: url('/Thmanyah-Font-Family/thmanyah typeface/thmanyahserifdisplay/ThmanyahSerifDisplay-Bold.ttf') format('truetype');
+  src: url('/Thmanyah-Font-Family/thmanyah%20typeface/thmanyahserifdisplay/woff2/thmanyahserifdisplay-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Thmanyah Serif Text';
-  src: url('/Thmanyah-Font-Family/thmanyah typeface/thmanyahseriftext/ThmanyahSerifText-Regular.ttf') format('truetype');
+  src: url('/Thmanyah-Font-Family/thmanyah%20typeface/thmanyahseriftext/woff2/thmanyahseriftext-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 /*
