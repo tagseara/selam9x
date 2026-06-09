@@ -40,8 +40,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # FIXED: TanStack Start + Nitro outputs static files into this exact directory
-          path: './.output/public'
+          # FORCED FALLBACK: Lovable's standard static export path
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
